@@ -680,3 +680,19 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
+.cv-links {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.cv-links a {
+    display: inline-block;
+    margin: 0 5px;
+    border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+}
+
+.cv-links a:hover {
+    border-bottom-color: transparent;
+}
