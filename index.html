@@ -9,12 +9,54 @@
 		<style>
 			.email {
 				font-size: 1.0em; /* Aumenta la dimensione del testo */
+				font-weight: bold; /* Aggiunto grassetto per l'email */
 			}
 			.cv-link {
 				display: block;
 				text-align: center;
 				font-size: 0.8em;
 				margin-top: 5px;
+				font-weight: bold; /* Aggiunto grassetto per la sezione CV */
+			}
+			.tryhackme-badge {
+				margin-top: 15px;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				overflow: hidden;
+			}
+			.tryhackme-badge iframe {
+				border: none;
+				width: 100%; /* Modifica: usa il 100% della larghezza disponibile */
+				height: 110px; /* Modifica: aumentato leggermente l'altezza */
+				overflow: hidden; /* Impedisce le barre di scorrimento */
+				max-width: 320px; /* Limita la larghezza massima */
+			}
+			.security-profiles {
+				margin-top: 15px;
+				text-align: center;
+			}
+			.htb-profile {
+				margin-top: 5px;
+				font-size: 0.9em;
+			}
+			@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+			.htb-profile {
+				margin-top: 5px;
+				font-size: 0.9em;
+				font-family: 'Share Tech Mono', monospace; /* Font stile hacker */
+			}
+			.htb-text {
+				color: #4caf50; /* Colore verde "hacker" */
+				font-weight: bold;
+				text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Leggero effetto glow */
+			}
+			.htb-link {
+				color: #4caf50; /* Colore verde "hacker" */
+				font-weight: bold;
+				text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Leggero effetto glow */
+				font-family: 'Share Tech Mono', monospace; /* Font stile hacker */
 			}
 		</style>
 	</head>
@@ -23,29 +65,38 @@
 			<div id="bg"></div>
 			<div id="overlay"></div>
 			<div id="main">
-
 				<!-- Header -->
 					<header id="header">
 						<img src="assets/css/images/profile8.jpg" alt="Foto Profilo" class="profile-picture">
 						
 						<h1>Marco Melucci</h1>
 						<p>Cyber Security Student &nbsp;&bull;&nbsp; Data Analyst &nbsp;&bull;&nbsp;</p>
-						<p><a href="mailto:marcomelucci23@gmail.com" class="email">marcomelucci23@gmail.com</a></p>
+						<p><a href="mailto:marcomelucci23@gmail.com" class="email"><strong>marcomelucci23@gmail.com</strong></a></p>
 						<nav>
 							<ul>
-								<li><a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" class="icon brands fa-linkedin"><span class="label">LinkedIn<fa-linkedin></fa-linkedin></span></a></li>
-								<li><a href="https://www.instagram.com/marcomelucci_" class="icon brands fa-instagram"><span class="label">fa-instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.instagram.com/marcomelucci_" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 								<li><a href="https://github.com/MarcoMelucci99" class="icon brands fa-github"><span class="label">Github</span></a></li>
 								<li><a href="https://www.credly.com/users/marcomelucci-friendlyhacker" class="icon solid fa-check-circle"><span class="label">Credly</span></a></li>
 							</ul>
 							<div class="cv-container">
-								<p class="cv-link">View my CV:&nbsp;&nbsp;&nbsp; 
+								<p class="cv-link"><strong>View my CV:&nbsp;&nbsp;&nbsp; 
 									<a href="assets/Melucci_CV_IT.pdf" target="_blank">CV (IT)</a> - 
 									<a href="assets/Melucci_CV_EN.pdf" target="_blank">CV (EN)</a>
-								</p>
+								</strong></p>
+							</div>
+							
+							<!-- TryHackMe Badge e HackTheBox Link -->
+							<div class="security-profiles">
+								<div class="tryhackme-badge">
+									<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4454806" scrolling="no"></iframe>
+								</div>
+								<div class="htb-profile">
+									<p><span class="htb-text">HackTheBox:</span> <a href="https://app.hackthebox.com/profile/2229520" target="_blank" class="htb-link">https://app.hackthebox.com/profile/2229520</a></p>
+								</div>
+							</div>
 						</nav>
 					</header>
-
 			</div>
 		</div>
 		<script>
@@ -54,4 +105,3 @@
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
 	</body>
-</html>
