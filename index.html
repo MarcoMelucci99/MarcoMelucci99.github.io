@@ -1,109 +1,778 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Marco Melucci Info</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			.email {
-				font-size: 1.0em; /* Aumenta la dimensione del testo */
-				font-weight: bold; /* Aggiunto grassetto per l'email */
-			}
-			.cv-link {
-				display: block;
-				text-align: center;
-				font-size: 0.8em;
-				margin-top: 5px;
-				font-weight: bold; /* Aggiunto grassetto per la sezione CV */
-			}
-			.tryhackme-badge {
-				margin-top: 15px;
-				display: flex;
-				justify-content: center;
-				width: 100%;
-				overflow: hidden;
-			}
-			.tryhackme-badge iframe {
-				border: none;
-				width: 100%; /* Modifica: usa il 100% della larghezza disponibile */
-				height: 110px; /* Modifica: aumentato leggermente l'altezza */
-				overflow: hidden; /* Impedisce le barre di scorrimento */
-				max-width: 320px; /* Limita la larghezza massima */
-			}
-			.security-profiles {
-				margin-top: 15px;
-				text-align: center;
-			}
-			.htb-profile {
-				margin-top: 5px;
-				font-size: 0.9em;
-			}
-			@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Marco Melucci - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			.htb-profile {
-				margin-top: 5px;
-				font-size: 0.9em;
-				font-family: 'Share Tech Mono', monospace; /* Font stile hacker */
-			}
-			.htb-text {
-				color: #4caf50; /* Colore verde "hacker" */
-				font-weight: bold;
-				text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Leggero effetto glow */
-			}
-			.htb-link {
-				color: #4caf50; /* Colore verde "hacker" */
-				font-weight: bold;
-				text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Leggero effetto glow */
-				font-family: 'Share Tech Mono', monospace; /* Font stile hacker */
-			}
-		</style>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-				<!-- Header -->
-					<header id="header">
-						<img src="assets/css/images/profile8.jpg" alt="Foto Profilo" class="profile-picture">
-						
-						<h1>Marco Melucci</h1>
-						<p>Cyber Security Student &nbsp;&bull;&nbsp; Data Analyst &nbsp;&bull;&nbsp;</p>
-						<p><a href="mailto:marcomelucci23@gmail.com" class="email"><strong>marcomelucci23@gmail.com</strong></a></p>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://www.instagram.com/marcomelucci_" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/MarcoMelucci99" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://www.credly.com/users/marcomelucci-friendlyhacker" class="icon solid fa-check-circle"><span class="label">Credly</span></a></li>
-							</ul>
-							<div class="cv-container">
-								<p class="cv-link"><strong>View my CV:&nbsp;&nbsp;&nbsp; 
-									<a href="assets/Melucci_Marco_CV_ITA.pdf" target="_blank">CV (IT)</a> - 
-									<a href="assets/Melucci_Marco_CV_ENG.pdf" target="_blank">CV (EN)</a>
-								</strong></p>
-							</div>
-							
-							<!-- TryHackMe Badge e HackTheBox Link -->
-							<div class="security-profiles">
-								<div class="tryhackme-badge">
-									<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4454806" scrolling="no"></iframe>
-								</div>
-								<div class="htb-profile">
-									<p><span class="htb-text">HackTheBox:</span> <a href="https://app.hackthebox.com/profile/2229520" target="_blank" class="htb-link">https://app.hackthebox.com/profile/2229520</a></p>
-								</div>
-							</div>
-						</nav>
-					</header>
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0d1117;
+            background-image: url('/assets/css/images/tech1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #c9d1d9;
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 140px;
+            position: relative;
+            font-size: 19px;
+            animation: fadeIn 0.8s ease-out;
+        }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
+        /* Add overlay for better text readability */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 17, 23, 0.85);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #30363d;
+            z-index: 999;
+            padding: 15px 0;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-header.active {
+            transform: translateY(0);
+        }
+
+        .sticky-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 0 200px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sticky-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #30363d;
+            flex-shrink: 0;
+        }
+
+        .sticky-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sticky-info h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin: 0;
+        }
+
+        .sticky-info p {
+            color: #8b949e;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Profile Header - Updated for vertical layout */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            margin-left: 180px;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #30363d;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            border-color: #2ea043;
+            transform: scale(1.05);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 42px;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin-bottom: 8px;
+        }
+
+        .profile-info p {
+            color: #8b949e;
+            font-size: 20px;
+        }
+
+        /* Section Container */
+        .section-container {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headers - FIXED ALIGNMENT */
+        .section-header {
+            font-size: 16px;
+            color: #7d8590;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            text-align: right;
+            padding-top: 4px; /* Added padding to align with content */
+            font-weight: 500;
+            line-height: 1.4;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            min-height: 28px;
+            white-space: nowrap;
+        }
+
+        .section-header::before {
+            content: '/';
+            color: #2ea043;
+            margin-right: 0;
+        }
+
+        /* About Section */
+        .about-content {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .about-text {
+            color: #c9d1d9;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .skills-inline {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .skill-badge {
+            background: transparent;
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 14px;
+            color: #8B7EFF;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            border-color: #2ea043;
+            color: #2ea043;
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-content {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            padding-top: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #8b949e;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #2ea043;
+            transform: translateX(5px);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Hacking Section - Fixed alignment */
+        .hacking-content {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start; /* Changed from center to flex-start */
+            padding-top: 0;
+        }
+
+        /* Platform boxes */
+        .platform-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: #f0f6fc;
+            transition: all 0.3s ease;
+            font-size: 17px;
+            font-weight: 600;
+            min-width: 240px;
+            height: 80px;
+            box-sizing: border-box;
+        }
+
+        .platform-box:hover {
+            border-color: #2ea043;
+            color: #2ea043;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(46, 160, 67, 0.2);
+        }
+
+        .platform-box:hover .platform-logo path {
+            stroke: #2ea043;
+        }
+
+        .platform-logo {
+            width: 36px;
+            height: 36px;
+        }
+
+        /* TryHackMe iframe container */
+        .thm-container {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            align-items: flex-start; /* Changed from center to flex-start */
+            height: 80px;
+            margin-top: 0;
+        }
+
+        .thm-container iframe {
+            border: none;
+            width: 100%;
+            height: 130px;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        .thm-container:hover iframe {
+            transform: scale(1.02);
+        }
+
+        /* Certifications */
+        .cert-content {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .cert-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cert-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #f0f6fc;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            min-width: 240px;
+            height: 80px;
+            box-sizing: border-box;
+        }
+
+        .cert-box:hover {
+            border-color: #2ea043;
+            color: #2ea043;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(46, 160, 67, 0.2);
+        }
+
+        .cert-icon {
+            font-size: 26px;
+        }
+
+        .award-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #f0f6fc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            min-width: 240px;
+            height: 80px;
+            box-sizing: border-box;
+        }
+
+        .award-box:hover {
+            border-color: #2ea043;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(46, 160, 67, 0.2);
+        }
+
+        /* Get in Touch Section */
+        .contact-content {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .contact-message {
+            color: #c9d1d9;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-content {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 10px 18px;
+            font-size: 14px;
+            color: #c9d1d9;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: #2ea043;
+            color: #2ea043;
+            transform: translateY(-2px);
+        }
+
+        /* Floating Navbar */
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(22, 27, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #30363d;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            animation: slideInUp 0.8s ease-out 1s both;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(100px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .nav-item {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #8b949e;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: #2ea043;
+            color: #0d1117;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 160, 67, 0.3);
+        }
+
+        .nav-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .nav-tooltip {
+            position: absolute;
+            bottom: 52px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1c2128;
+            color: #f0f6fc;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            border: 1px solid #30363d;
+        }
+
+        .nav-item:hover .nav-tooltip {
+            opacity: 1;
+            border-color: #2ea043;
+            color: #2ea043;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .profile-header {
+                margin-left: 0;
+                align-items: center;
+                text-align: center;
+            }
+
+            .section-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .section-header {
+                text-align: left;
+                margin-bottom: 10px;
+                justify-content: flex-start;
+                padding-top: 0; /* Reset padding for mobile */
+            }
+
+            .floating-nav {
+                gap: 10px;
+                padding: 10px 15px;
+            }
+
+            .hacking-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .platform-box, .thm-container {
+                width: 100%;
+                min-width: auto;
+                height: auto;
+            }
+
+            .platform-box {
+                padding: 12px 16px;
+            }
+
+            .thm-container iframe {
+                width: 100%;
+                height: 120px;
+            }
+
+            .sticky-content {
+                padding: 0 15px;
+                gap: 10px;
+            }
+
+            .sticky-info h1 {
+                font-size: 18px;
+            }
+
+            .sticky-info p {
+                font-size: 12px;
+            }
+
+            .sticky-pic {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <div class="sticky-header" id="stickyHeader">
+        <div class="sticky-content">
+            <div class="sticky-pic">
+                <img src="/assets/css/images/foto_linkedin.jpg" alt="Marco Melucci">
+            </div>
+            <div class="sticky-info">
+                <h1>Marco Melucci</h1>
+                <p>Cybersecurity | Data Enthusiast</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header" id="profileHeader">
+            <div class="profile-pic">
+                <img src="/assets/css/images/foto_linkedin.jpg" alt="Marco Melucci">
+            </div>
+            <div class="profile-info">
+                <h1>Marco Melucci</h1>
+                <p>Cybersecurity | Data Enthusiast</p>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="section-container">
+            <div class="section-header">about me</div>
+            <div class="about-content">
+                <p class="about-text">
+                    Hey there, I'm Marco — a cybersecurity Student and Data Nerd based in Italy.
+                </p>
+                <p class="about-text">
+                    I just graduated at the Accenture CyberHackademy where I developed skills in
+                    <span class="skills-inline">
+                        <span class="skill-badge">Cybersecurity</span>
+                        <span class="skill-badge">Ethical Hacking</span>
+                        <span class="skill-badge">Networking</span>
+                        <span class="skill-badge">AI</span>
+                        <span class="skill-badge">Cloud Security</span>
+                        <span class="skill-badge">IoT</span>
+                    </span>
+                    <br>right after completing my Master's Degree in Digital Sociology and Web Analysis, where I specialized in Data Analysis.
+                </p>
+                <p class="about-text">
+                    When I'm not breaking stuff online, you'll find me 🎬 watching movies, 🎮 geeking out, or getting inspired by books & art 📚
+                </p>
+            </div>
+        </div>
+
+        <!-- Socials -->
+        <div class="section-container">
+            <div class="section-header">socials</div>
+            <div class="social-content">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" class="social-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/MarcoMelucci99" class="social-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.instagram.com/marcomelucci_" class="social-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="mailto:marcomelucci23@gmail.com" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        marcomelucci23@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ethical Hacking -->
+        <div class="section-container">
+            <div class="section-header">ethical hacking</div>
+            <div class="hacking-content">
+                <!-- HackTheBox -->
+                <a href="https://app.hackthebox.com/profile/2229520" class="platform-box" target="_blank" rel="noopener">
+                    <svg class="platform-logo" viewBox="0 0 200 200" fill="none">
+                        <path d="M50 75L100 50L150 75V125L100 150L50 125V75Z" stroke="#9fef00" stroke-width="3" fill="none"/>
+                        <path d="M50 75L100 100L150 75" stroke="#9fef00" stroke-width="3"/>
+                        <path d="M100 100V150" stroke="#9fef00" stroke-width="3"/>
+                    </svg>
+                    <span>HackTheBox</span>
+                </a>
+
+                <!-- TryHackMe -->
+                <div class="thm-container">
+                    <iframe 
+                        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4454806"
+                        loading="lazy"
+                        title="TryHackMe badge">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications & Awards -->
+        <div class="section-container">
+            <div class="section-header">certifications & awards</div>
+            <div class="cert-content">
+                <div class="cert-container">
+                    <a href="https://www.credly.com/users/marcomelucci-friendlyhacker" class="cert-box" target="_blank" rel="noopener">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="#2ea043" aria-hidden="true">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Certifications
+                    </a>
+                    <div class="award-box">
+                        <span class="cert-icon">🏆</span>
+                        Youth America Award
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get in Touch Section -->
+        <div class="section-container">
+            <div class="section-header">get in touch</div>
+            <div class="contact-content">
+                <div class="contact-message">
+                    Feel free to contact me for further information or to request my curriculum vitae/resumé 🚀📬
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section-container">
+            <div class="section-header">skills</div>
+            <div class="skills-content">
+                <div class="skills-container">
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Ethical Hacking</span>
+                    <span class="skill-tag">Offensive Security</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">Metasploit</span>
+                    <span class="skill-tag">Burp Suite</span>
+                    <span class="skill-tag">Nmap</span>
+                    <span class="skill-tag">Linux/Kali</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Tableau</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav" aria-label="Quick links">
+        <a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" class="nav-item" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span class="nav-tooltip">LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/MarcoMelucci99" class="nav-item" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span class="nav-tooltip">GitHub</span>
+        </a>
+
+        <a href="https://www.instagram.com/marcomelucci_" class="nav-item" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg>
+            <span class="nav-tooltip">Instagram</span>
+        </a>
+
+        <a href="mailto:marcomelucci23@gmail.com" class="nav-item" aria-label="email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="nav-tooltip">Send me an e-mail</span>
+        </a>
+    </nav>
+
+    <script>
+        // Sticky header functionality
+        const stickyHeader = document.getElementById('stickyHeader');
+        const profileHeader = document.getElementById('profileHeader');
+
+        function handleScroll() {
+            const profileHeaderBottom = profileHeader.offsetTop + profileHeader.offsetHeight;
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > profileHeaderBottom - 100) {
+                stickyHeader.classList.add('active');
+            } else {
+                stickyHeader.classList.remove('active');
+            }
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check
+        handleScroll();
+    </script>
+</body>
+</html>
