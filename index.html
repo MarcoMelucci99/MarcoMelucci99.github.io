@@ -12,7 +12,7 @@
   <meta property="og:title" content="Marco Melucci | Cybersecurity">
   <meta property="og:description" content="OT/ICS and automotive security at Accenture Cybersecurity.">
   <meta property="og:image" content="https://marcomelucci.me/assets/css/images/foto_linkedin.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Century Gothic,Avenir Next,Arial,sans-serif' font-weight='800' font-size='26' fill='%23EDEEEA'%3EMM%3C/text%3E%3Crect x='12' y='44' width='40' height='3' fill='%234FC3E8'/%3E%3Crect x='12' y='47' width='40' height='3' fill='%2345BE72'/%3E%3Crect x='12' y='50' width='40' height='3' fill='%23F5C518'/%3E%3Crect x='12' y='53' width='40' height='3' fill='%23E8432F'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Cpolygon points='11,14 13.5,14 29.75,46 27.5,46' fill='%23E8432F'/%3E%3Cpolygon points='13.5,14 16,14 32,46 29.75,46' fill='%23F5C518'/%3E%3Cpolygon points='16,14 18.5,14 34.25,46 32,46' fill='%2345BE72'/%3E%3Cpolygon points='18.5,14 21,14 36.5,46 34.25,46' fill='%234FC3E8'/%3E%3Cpolygon points='53,14 43,14 27.5,46 36.5,46' fill='%23EDEEEA'/%3E%3Crect x='11' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3Crect x='44' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -32,6 +32,14 @@
       --s2: #45BE72;  /* green */
       --s3: #F5C518;  /* yellow */
       --s4: #E8432F;  /* red */
+      --orange: #F28C28;
+      --blue: #4C7DFF;
+      --purple: #9B6BFF;
+      --plum: #442B48;
+      --r1: #4FC3E8;  /* sky */
+      --r2: #45BE72;  /* green */
+      --r3: #F5C518;  /* yellow */
+      --r4: #E8432F;  /* red */
       --on-s: #15161A;
       --on-s4: #15161A;
       --display: "Urbanist", "Century Gothic", "Avenir Next", "Futura", system-ui, sans-serif;
@@ -49,7 +57,7 @@
         --ink: #EDEEEA;
         --ink-2: #9B9DA4;
         --rule: #2D2E34;
-        --name-hl: 55%;
+        --name-hl: 90%;
       }
     }
 
@@ -104,10 +112,10 @@
     /* ---------- The ribbon: one four-stripe line that runs through the page ---------- */
     .ribbon { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; }
     .ribbon path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .ribbon path:nth-child(1) { stroke: var(--s1); }
-    .ribbon path:nth-child(2) { stroke: var(--s2); }
-    .ribbon path:nth-child(3) { stroke: var(--s3); }
-    .ribbon path:nth-child(4) { stroke: var(--s4); }
+    .ribbon path:nth-child(1) { stroke: var(--r1); }
+    .ribbon path:nth-child(2) { stroke: var(--r2); }
+    .ribbon path:nth-child(3) { stroke: var(--r3); }
+    .ribbon path:nth-child(4) { stroke: var(--r4); }
     .ribbon-anchor { height: 32px; margin-block: clamp(24px, 3vw, 40px); }
     @media (max-width: 759px) { .ribbon-anchor { height: 12px; } }
 
@@ -129,6 +137,7 @@
       .btn-ink:hover { background: var(--s4); border-color: var(--s4); color: var(--on-s); }
       a:hover .arrow { transform: translate(2px, -2px); }
       a:hover .arrow-down { transform: translateY(2px); }
+      a:hover .arrow-up { transform: translateY(-2px); }
     }
 
     /* ---------- Loader ---------- */
@@ -178,15 +187,15 @@
     .brand-hl { position: relative; isolation: isolate; }
     .brand-hl::before {
       content: ""; position: absolute; z-index: -1;
-      left: -2px; right: -2px; bottom: 0.06em; height: 0.38em; border-radius: 2px;
-      background-color: color-mix(in srgb, var(--s3) var(--name-hl, 42%), transparent);
+      left: -6px; width: calc(90% + 6px); top: -0.02em; bottom: -0.04em;
+      border-radius: 4px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--plum) var(--name-hl, 45%), transparent), transparent);
       transform-origin: left;
-      transition: background-color 400ms ease;
     }
     .js .brand-hl::before { transform: scaleX(0); }
     .js.is-ready .brand-hl::before {
       transform: none;
-      transition: transform 700ms var(--ease-out) 600ms, background-color 400ms ease;
+      transition: transform 700ms var(--ease-out) 600ms;
     }
     .brand-role { overflow: hidden; font-size: 13px; color: var(--ink-2); white-space: nowrap; text-overflow: ellipsis; }
     .brand-title { color: var(--ink); font-weight: 500; }
@@ -206,24 +215,34 @@
     .slash { color: var(--c); font-weight: 800; }
     .nav a::after {
       content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
-      background: linear-gradient(90deg, var(--s1) 0 25%, var(--s2) 25% 50%, var(--s3) 50% 75%, var(--s4) 75%);
+      background: linear-gradient(90deg, var(--r1) 0 25%, var(--r2) 25% 50%, var(--r3) 50% 75%, var(--r4) 75%);
       transform: scaleX(0); transform-origin: left;
       transition: transform 300ms var(--ease-out);
     }
     .nav a[aria-current] { color: var(--ink); }
     .nav a[aria-current]::after { transform: scaleX(1); }
-    .socials { display: flex; gap: 14px; }
-    .socials a { font-size: 13px; font-weight: 600; text-decoration: none; color: var(--ink-2); transition: color 200ms ease; }
+    .socials { display: flex; align-items: center; gap: 6px; }
+    .socials a {
+      display: grid; place-items: center;
+      width: 34px; height: 34px; border-radius: 50%;
+      color: var(--ink-2);
+      transition: color 200ms ease, background-color 200ms ease, transform 160ms var(--ease-out);
+    }
+    .socials a:active { transform: scale(0.92); }
+    .socials .ico { width: 17px; height: 17px; }
     .menu-btn { display: none; }
-    @media (hover: hover) and (pointer: fine) { .nav a:hover, .socials a:hover { color: var(--ink); } }
-    @media (max-width: 1140px) {
+    @media (hover: hover) and (pointer: fine) {
+      .nav a:hover { color: var(--ink); }
+      .socials a:hover { background: var(--c); color: var(--on-s); }
+    }
+    @media (max-width: 1200px) {
       .nav, .socials { display: none; }
       .menu-btn { display: inline-flex; }
     }
 
     /* Mobile menu */
     .menu { display: none; }
-    @media (max-width: 1140px) {
+    @media (max-width: 1200px) {
       .menu {
         position: fixed; inset: var(--header-h) 0 0; z-index: 58;
         display: block; padding: 16px var(--gutter) 32px;
@@ -383,9 +402,83 @@
       .facts { grid-template-columns: 1fr; gap: 20px; }
     }
 
+    /* Rows that fill with their section colour on hover */
+    .fill-row { position: relative; isolation: isolate; }
+    .fill-row::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: var(--fill);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 450ms var(--ease-out);
+    }
+    .fill-row, .fill-row .focus-text, .fill-row .path-where { transition: color 250ms ease; }
+    @media (hover: hover) and (pointer: fine) {
+      .fill-row:hover::before { transform: scaleX(1); }
+      .fill-row:hover, .fill-row:hover .focus-text, .fill-row:hover .path-where { color: var(--on-s); }
+      .fill-row:hover .swatch { background: var(--on-s); }
+    }
+
+    /* About body + languages */
+    .about-body {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 48px;
+      max-width: 1040px; margin-top: clamp(28px, 4vw, 48px);
+      font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.6; color: var(--ink-2);
+      text-wrap: pretty;
+    }
+    .about-body .hl { color: var(--ink); }
+    .langs { margin-top: clamp(48px, 6vw, 80px); }
+    .lang-list { display: grid; grid-template-columns: repeat(2, minmax(0, 240px)); gap: 10px; margin-top: 14px; }
+    .lang {
+      position: relative; isolation: isolate; overflow: hidden;
+      display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 28px 12px;
+      min-height: 112px; padding: 14px 16px; gap: 18px 10px;
+      border: 1.5px solid var(--ink); border-radius: 16px;
+      transition: color 250ms ease, border-color 250ms ease;
+    }
+    .lang::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: var(--c);
+      transform: translateY(101%);
+      transition: transform 450ms var(--ease-out);
+    }
+    .lang-code { grid-column: 1 / -1; align-self: start; font-family: var(--display); font-weight: 800; font-size: 1.75rem; line-height: 1; letter-spacing: -0.03em; }
+    .lang-name { font-family: var(--display); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.015em; }
+    .lang-level { padding: 5px 10px; border: 1.5px solid currentColor; border-radius: 999px; font-size: 13px; font-weight: 600; line-height: 1; }
+    @media (hover: hover) and (pointer: fine) {
+      .lang:hover::before { transform: none; }
+      .lang:hover { color: var(--on-s); border-color: var(--c); }
+    }
+    @media (max-width: 760px) {
+      .about-body { grid-template-columns: 1fr; }
+      .lang-list { grid-template-columns: 1fr 1fr; }
+      .lang { min-height: 100px; padding: 12px 14px; }
+      .lang-code { font-size: 1.5rem; }
+    }
+
+    /* The first stroke of the M in MARCO carries the four stripes */
+    @property --m-grow { syntax: '<number>'; inherits: false; initial-value: 1; }
+    .m-mark { display: inline-block; }
+    .m-mark.m-ready {
+      color: transparent; -webkit-text-fill-color: transparent;
+      background-image:
+        linear-gradient(var(--m-a2),
+          var(--ink) 0 var(--m-t0),
+          transparent var(--m-t0) calc(var(--m-t0) + var(--m-len) * var(--m-grow)),
+          var(--ink) calc(var(--m-t0) + var(--m-len) * var(--m-grow))),
+        linear-gradient(var(--m-a1),
+          transparent 0 var(--m-b0),
+          var(--r4) var(--m-b0) var(--m-b1), var(--r3) var(--m-b1) var(--m-b2),
+          var(--r2) var(--m-b2) var(--m-b3), var(--r1) var(--m-b3) var(--m-b4),
+          transparent var(--m-b4)),
+        linear-gradient(var(--ink), var(--ink));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .js .m-mark.m-ready { --m-grow: 0; }
+    .js.is-ready .m-mark.m-ready { --m-grow: 1; transition: --m-grow 900ms var(--ease-out) 900ms; }
+
     /* Focus */
     .focus-list { border-top: 1px solid var(--rule); }
     .focus-item {
+      padding-inline: clamp(12px, 1.6vw, 20px);
       display: grid; grid-template-columns: auto minmax(0, 5fr) minmax(0, 4fr);
       gap: clamp(20px, 3vw, 48px); align-items: baseline;
       padding-block: clamp(28px, 4vw, 48px); border-bottom: 1px solid var(--rule);
@@ -399,8 +492,13 @@
       display: inline-flex; align-items: center; gap: 8px;
       padding: 8px 14px; border: 1.5px solid var(--ink); border-radius: 999px;
       font-size: 14px; font-weight: 600; line-height: 1;
+      transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
     }
-    .tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+    .tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); transition: background-color 200ms ease; }
+    @media (hover: hover) and (pointer: fine) {
+      .tag:hover { background: var(--c); border-color: var(--c); color: var(--on-s); }
+      .tag:hover::before { background: var(--on-s); }
+    }
     @media (max-width: 760px) {
       .focus-item { grid-template-columns: auto minmax(0, 1fr); row-gap: 14px; }
       .focus-text { grid-column: 2; }
@@ -409,11 +507,12 @@
     /* Path */
     .path { border-top: 1px solid var(--rule); }
     .path-row {
-      display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr);
+      padding-inline: clamp(12px, 1.6vw, 20px);
+      display: grid; grid-template-columns: minmax(0, 3.4fr) minmax(0, 4.6fr) minmax(0, 4fr);
       gap: 24px; align-items: baseline;
       padding-block: clamp(22px, 3vw, 36px); border-bottom: 1px solid var(--rule);
     }
-    .path-when { font-family: var(--display); font-weight: 800; font-size: clamp(1.75rem, 3.4vw, 2.75rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+    .path-when { text-wrap: balance; font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
     .path-what { font-family: var(--display); font-weight: 700; font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.2; letter-spacing: -0.015em; }
     .path-where { color: var(--ink-2); }
     @media (max-width: 760px) { .path-row { grid-template-columns: 1fr; gap: 6px; } }
@@ -451,19 +550,55 @@
       .row { grid-template-columns: 12px minmax(0, 1fr) auto; row-gap: 6px; }
       .row-meta { grid-column: 2; grid-row: 2; }
     }
-    .row-thm { grid-template-columns: 12px minmax(0, 1fr) auto; }
-    .thm-badge { justify-self: end; max-width: 100%; min-height: 40px; }
-    .thm-badge iframe, .thm-badge img { display: block; max-width: 100%; border: 0; }
+    .row-thm { grid-template-columns: 12px minmax(0, 1fr) 110px; row-gap: 18px; }
+    .row-thm .row-cta { grid-column: 3; grid-row: 1; }
+    .row-link { color: inherit; text-decoration: none; }
+    .row-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+    .thm-badge {
+      position: relative; z-index: 2;
+      grid-column: 2 / -1; grid-row: 2; justify-self: start;
+      width: min(400px, 100%); height: calc(172px * var(--k, 1));
+      overflow: hidden; border-radius: 12px;
+    }
+    .thm-badge iframe {
+      display: block; width: 400px; height: 172px; border: 0;
+      color-scheme: light;
+      transform: scale(var(--k, 1)); transform-origin: top left;
+    }
+    .row-thm:focus-within::before { transform: scaleX(1); }
+    .row-thm:focus-within { color: var(--on, var(--on-s)); }
+    .row-link:focus-visible { outline: none; }
+    .row-thm:has(.row-link:focus-visible) { outline: 2px solid var(--ink); outline-offset: -3px; }
+    @media (hover: hover) and (pointer: fine) {
+      .row-thm:hover::before { transform: scaleX(1); }
+      .row-thm:hover { color: var(--on, var(--on-s)); }
+      .row-thm:hover .row-dot { background: var(--on, var(--on-s)); }
+      .row-thm:hover .arrow { transform: translate(2px, -2px); }
+    }
     @media (max-width: 760px) {
-      .row-thm { grid-template-columns: 12px minmax(0, 1fr); }
-      .thm-badge { grid-column: 2; justify-self: start; margin-top: 8px; }
+      .row-thm { grid-template-columns: 12px minmax(0, 1fr) auto; row-gap: 14px; }
     }
 
     .toolkit { margin-top: clamp(64px, 8vw, 112px); }
     .toolkit-head { padding-bottom: 16px; border-bottom: 1.5px solid var(--ink); font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.25rem); letter-spacing: -0.02em; }
     .kit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
     .kit ul { margin-top: 12px; }
-    .kit li { padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 17px; font-weight: 500; }
+    .kit li {
+      position: relative;
+      padding: 9px 0; border-bottom: 1px solid var(--rule);
+      font-size: 17px; font-weight: 500;
+      transition: padding-left 250ms var(--ease-out), color 200ms ease;
+    }
+    .kit li::before {
+      content: ""; position: absolute; left: 0; top: 50%;
+      width: 8px; height: 8px; margin-top: -4px; border-radius: 2px;
+      background: var(--s4);
+      transform: scale(0); transition: transform 250ms var(--ease-out);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .kit li:hover { padding-left: 18px; }
+      .kit li:hover::before { transform: scale(1); }
+    }
     @media (max-width: 760px) { .kit-grid { grid-template-columns: 1fr; } }
 
     /* Contact */
@@ -471,6 +606,34 @@
       max-width: 30ch;
       font-family: var(--display); font-weight: 600;
       font-size: clamp(1.25rem, 2.2vw, 1.75rem); line-height: 1.2; letter-spacing: -0.015em;
+    }
+    .email-link {
+      display: inline-flex; flex-direction: column; gap: 2px; max-width: 100%;
+      margin-top: clamp(24px, 3vw, 40px);
+      color: var(--ink); text-decoration: none;
+    }
+    .email-pre { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+    .email-main { display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); min-width: 0; }
+    .email-text {
+      min-width: 0;
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(1.25rem, 4.2vw, 3.5rem); line-height: 1.08; letter-spacing: -0.03em;
+      overflow-wrap: anywhere;
+      text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.14em;
+      text-decoration-color: var(--rule);
+      transition: text-decoration-color 200ms ease;
+    }
+    .email-go {
+      flex: none; display: grid; place-items: center;
+      width: clamp(38px, 3.4vw, 52px); height: clamp(38px, 3.4vw, 52px);
+      border: 1.5px solid var(--ink); border-radius: 50%;
+      transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out);
+    }
+    .email-go .arrow { width: 14px; height: 14px; }
+    .email-link:active .email-go { transform: scale(0.94); }
+    @media (hover: hover) and (pointer: fine) {
+      .email-link:hover .email-text { text-decoration-color: var(--s4); }
+      .email-link:hover .email-go { background: var(--s4); border-color: var(--s4); color: var(--on-s); }
     }
     .email-big {
       display: block; margin-top: clamp(24px, 3vw, 40px);
@@ -480,7 +643,7 @@
     .email-big .fit { display: inline-block; white-space: nowrap; transition: color 200ms ease; }
     @media (hover: hover) and (pointer: fine) { .email-big:hover .fit { color: var(--s4); } }
     .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    #copyBtn { min-width: 12em; }
+    #copyBtn { min-width: 14.5em; }
     .btn-label { display: inline-block; transition: opacity 140ms ease, filter 140ms ease, transform 140ms var(--ease-out); }
     .btn-label.is-swapping { opacity: 0; filter: blur(4px); transform: scale(0.96); }
 
@@ -488,6 +651,7 @@
     .footer { padding: 28px 0 max(28px, env(safe-area-inset-bottom)); border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink-2); }
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
     .footer a { text-decoration: none; font-weight: 600; color: var(--ink); }
+    .to-top { display: inline-flex; align-items: center; gap: 6px; }
 
     /* ---------- Reduced motion ---------- */
     @media (prefers-reduced-motion: reduce) {
@@ -497,6 +661,8 @@
       .js.is-ready .hero-fade { transition: opacity 400ms ease; }
       .roll-col, .row::before, .nav a::after, .js [data-hl].in .hl { transition: none; }
       .js .brand-hl::before { transform: none; }
+      .fill-row::before, .lang::before, .kit li, .kit li::before { transition: none; }
+      .js .m-mark.m-ready, .js.is-ready .m-mark.m-ready { --m-grow: 1; transition: none; }
       .menu, .menu.open { transition: none; }
       .menu li { transform: none; }
       .btn:active { transform: none; }
@@ -513,10 +679,10 @@
       <p class="loader-label"><strong>Marco Melucci</strong><br>Cybersecurity</p>
       <p class="loader-count"><span id="loaderNum"><span class="d">0</span><span class="d">0</span><span class="d">0</span></span><span class="loader-pct">%</span></p>
       <div class="loader-bars">
-        <span style="--c: var(--s1)"></span>
-        <span style="--c: var(--s2)"></span>
-        <span style="--c: var(--s3)"></span>
-        <span style="--c: var(--s4)"></span>
+        <span style="--c: var(--r1)"></span>
+        <span style="--c: var(--r2)"></span>
+        <span style="--c: var(--r3)"></span>
+        <span style="--c: var(--r4)"></span>
       </div>
     </div>
   </div>
@@ -533,22 +699,22 @@
         </span>
         <span class="brand-text">
           <span class="brand-name"><span class="brand-hl">Marco Melucci</span></span>
-          <span class="brand-role"><span class="brand-title">Security Transformation Analyst</span><span class="brand-org"> at Accenture</span></span>
+          <span class="brand-role"><span class="brand-title">Security Transformation Analyst</span><span class="brand-org"> @Accenture</span></span>
         </span>
       </a>
       <nav class="nav" aria-label="Chapters">
         <ol>
           <li><a href="#about"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</a></li>
-          <li><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>focus</a></li>
-          <li><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>path</a></li>
+          <li><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</a></li>
+          <li><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</a></li>
           <li><a href="#certifications"><span class="slash" style="--c: var(--s4)" aria-hidden="true">/</span>certs – hacking</a></li>
           <li><a href="#contact"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>contact</a></li>
         </ol>
       </nav>
       <ul class="socials">
-        <li><a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a></li>
-        <li><a href="https://github.com/MarcoMelucci99" target="_blank" rel="noopener" aria-label="GitHub">Gh</a></li>
-        <li><a href="https://www.instagram.com/marcomelucci_" target="_blank" rel="noopener" aria-label="Instagram">Ig</a></li>
+        <li><a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" target="_blank" rel="noopener" aria-label="LinkedIn" style="--c: var(--s1)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+        <li><a href="https://github.com/MarcoMelucci99" target="_blank" rel="noopener" aria-label="GitHub" style="--c: var(--s2)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a></li>
+        <li><a href="mailto:marcomelucci23@gmail.com" aria-label="Email" style="--c: var(--s4)"><svg class="ico ico-stroke" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.75" y="3.25" width="12.5" height="9.5" rx="1.8"/><path d="m2.5 4.6 5.5 4.15 5.5-4.15"/></svg></a></li>
       </ul>
       <button class="btn btn-sm menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     </div>
@@ -557,8 +723,8 @@
   <div class="menu" id="menu" inert>
     <ol>
       <li style="--i: 0"><a href="#about"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</a></li>
-      <li style="--i: 1"><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>focus</a></li>
-      <li style="--i: 2"><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>path</a></li>
+      <li style="--i: 1"><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</a></li>
+      <li style="--i: 2"><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</a></li>
       <li style="--i: 3"><a href="#certifications"><span class="slash" style="--c: var(--s4)" aria-hidden="true">/</span>certifications – ethical hacking</a></li>
       <li style="--i: 4"><a href="#contact"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>contact</a></li>
     </ol>
@@ -578,7 +744,7 @@
     <!-- Home -->
     <section class="hero" id="top" data-chapter="0" data-name="/home" aria-labelledby="name">
       <div class="wrap hero-main">
-        <h1 class="wordmark" id="name"><span class="line"><span>Marco</span></span><span class="line"><span>Melucci</span></span></h1>
+        <h1 class="wordmark" id="name"><span class="line"><span><span class="m-mark">M</span>arco</span></span><span class="line"><span>Melucci</span></span></h1>
         <figure class="hero-photo">
           <span class="hero-photo-fallback" aria-hidden="true">MM</span>
           <img src="/assets/css/images/Linkedin_Iphone.JPEG" alt="Portrait of Marco Melucci" decoding="async" fetchpriority="high" onerror="this.remove()">
@@ -587,7 +753,7 @@
       <div class="wrap ribbon-anchor" id="anchorHero" aria-hidden="true"></div>
       <div class="wrap hero-meta hero-fade" style="--d: 200ms">
         <p><span class="k">Workplace</span><br>Accenture Cybersecurity</p>
-        <p><span class="k">Focus</span><br>OT/ICS and automotive security</p>
+        <p><span class="k">Specializations</span><br>OT/ICS and automotive security</p>
         <p><span class="k">Based in</span><br>Italy, <time id="clock">--:--</time> local time</p>
       </div>
       <div class="wrap hero-bottom">
@@ -606,42 +772,43 @@
           <h2 class="chap-title" id="about-title"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</h2>
           <span class="chap-num" aria-hidden="true">01/05</span>
         </header>
-        <div class="about-grid">
-          <div>
-            <p class="statement" id="statement" data-hl><mark class="hl" style="--c: var(--s1); --i: 0">Hello World</mark>, I'm Marco and I work on the security of <mark class="hl" style="--c: var(--s3); --i: 1">industrial control systems</mark>, operational networks and <mark class="hl" style="--c: var(--s4); --i: 2">connected vehicles</mark>: the places where software meets the <mark class="hl" style="--c: var(--s2); --i: 3">physical world</mark>.</p>
-            <div class="facts">
-              <div>
-                <p class="label">Current role</p>
-                <p>Security Transformation Analyst at Accenture Cybersecurity, focused on OT/ICS and automotive security.</p>
-              </div>
-              <div>
-                <p class="label">Background</p>
-                <p>Master's Degree in Data Analysis at the University of Naples Federico II, followed by Cyber Hackademy 2025.</p>
-              </div>
-              <div>
-                <p class="label">Off the clock</p>
-                <p>Films, games, books and art.</p>
-              </div>
-            </div>
-          </div>
+        <p class="statement" data-hl><mark class="hl" style="--c: var(--s1); --i: 0">Hello World</mark>, I'm Marco. I work in cybersecurity, mostly on the tech you never see but rely on every day: <mark class="hl" style="--c: var(--s3); --i: 1">industrial control systems</mark> and <mark class="hl" style="--c: var(--s4); --i: 2">connected vehicles</mark>.</p>
+        <div class="about-body" data-hl>
+          <p>My background is <mark class="hl" style="--c: var(--s2); --i: 0">a bit of a mix</mark>. I started out in data, with a Master's Degree in Data Analysis at the University of Naples Federico II, then dove into security through Cyber Hackademy 2025. Today I'm a Security Transformation Analyst at Accenture Cybersecurity.</p>
+          <p>When I'm not <mark class="hl" style="--c: var(--s1); --i: 1">breaking stuff online</mark> (ethically, of course), you'll find me reading a book, watching a movie, geeking out online or getting inspired by art.</p>
+        </div>
+        <div class="langs">
+          <p class="label">Languages</p>
+          <ul class="lang-list">
+            <li class="lang" style="--c: var(--s2)">
+              <span class="lang-code" aria-hidden="true">IT</span>
+              <span class="lang-name">Italian</span>
+              <span class="lang-level">Native</span>
+            </li>
+            <li class="lang" style="--c: var(--s1)">
+              <span class="lang-code" aria-hidden="true">EN</span>
+              <span class="lang-name">English</span>
+              <span class="lang-level">Fluent</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- 02 Focus -->
-    <section class="chapter-sec" id="focus" data-chapter="2" data-name="/focus" aria-labelledby="focus-title">
+    <!-- 02 Specializations -->
+    <section class="chapter-sec" id="focus" data-chapter="2" data-name="/specializations" aria-labelledby="focus-title">
       <div class="wrap">
         <header class="chap-head">
-          <h2 class="chap-title" id="focus-title"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>focus</h2>
+          <h2 class="chap-title" id="focus-title"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</h2>
           <span class="chap-num" aria-hidden="true">02/05</span>
         </header>
-        <div class="focus-list">
-          <article class="focus-item">
+        <div class="focus-list" style="--fill: var(--s2)">
+          <article class="focus-item fill-row">
             <span class="swatch" style="--c: var(--s3)" aria-hidden="true"></span>
             <h3 class="focus-title">OT/ICS security</h3>
             <p class="focus-text">Protecting industrial control systems and the operational networks behind manufacturing, energy and critical infrastructure.</p>
           </article>
-          <article class="focus-item">
+          <article class="focus-item fill-row">
             <span class="swatch" style="--c: var(--s4)" aria-hidden="true"></span>
             <h3 class="focus-title">Automotive security</h3>
             <p class="focus-text">Securing connected vehicles, from in-vehicle networks to the software and services around them.</p>
@@ -654,36 +821,37 @@
             <li class="tag" style="--c: var(--s2)">IoT</li>
             <li class="tag" style="--c: var(--s3)">AI</li>
             <li class="tag" style="--c: var(--s4)">Networking</li>
-            <li class="tag" style="--c: var(--s1)">Incident response</li>
+            <li class="tag" style="--c: var(--s1)">Offensive security</li>
+            <li class="tag" style="--c: var(--s2)">Use case engineering</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 03 Path -->
-    <section class="chapter-sec" id="path" data-chapter="3" data-name="/path" aria-labelledby="path-title">
+    <!-- 03 Career path -->
+    <section class="chapter-sec" id="path" data-chapter="3" data-name="/career path" aria-labelledby="path-title">
       <div class="wrap">
         <header class="chap-head">
-          <h2 class="chap-title" id="path-title"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>path</h2>
+          <h2 class="chap-title" id="path-title"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</h2>
           <span class="chap-num" aria-hidden="true">03/05</span>
         </header>
         <ol class="path">
-          <li class="path-row">
-            <p class="path-when">Now</p>
+          <li class="path-row fill-row" style="--fill: var(--purple)">
+            <p class="path-when">2025 – Present</p>
             <p class="path-what">Security Transformation Analyst</p>
             <p class="path-where">Accenture Cybersecurity</p>
           </li>
-          <li class="path-row">
+          <li class="path-row fill-row" style="--fill: var(--blue)">
             <p class="path-when">2025</p>
             <p class="path-what">Cyber Hackademy</p>
             <p class="path-where">A cybersecurity program that gave me solid ground in networking, OT security, penetration testing and AI.</p>
           </li>
-          <li class="path-row">
+          <li class="path-row fill-row" style="--fill: var(--s2)">
             <p class="path-when">Award</p>
             <p class="path-what">Youth America Award</p>
             <p class="path-where">Recognized among the top 1,000 graduates in Italy.</p>
           </li>
-          <li class="path-row">
+          <li class="path-row fill-row" style="--fill: var(--s1)">
             <p class="path-when">Earlier</p>
             <p class="path-what">Master's Degree in Data Analysis</p>
             <p class="path-where">University of Naples Federico II</p>
@@ -701,7 +869,7 @@
         </header>
         <ul class="rows">
           <li>
-            <a class="row" href="https://www.credly.com/users/marcomelucci-friendlyhacker" target="_blank" rel="noopener" style="--fill: var(--s1)">
+            <a class="row" href="https://www.credly.com/users/marcomelucci-friendlyhacker" target="_blank" rel="noopener" style="--fill: var(--orange)">
               <span class="row-dot" aria-hidden="true"></span>
               <span class="row-title">Credly</span>
               <span class="row-meta">Verified certifications</span>
@@ -717,12 +885,13 @@
             </a>
           </li>
           <li>
-            <div class="row row-thm" style="--fill: var(--s3)">
+            <div class="row row-thm" style="--fill: var(--blue)">
               <span class="row-dot" aria-hidden="true"></span>
               <span class="row-title">TryHackMe</span>
-              <div class="thm-badge">
-                <script src="https://tryhackme.com/badge/t/3780a1d006eae576519993e42b1760d9ffad73dfcd710f0311c712e45ea8e0698c32fbb96626401cfaea88932ece8006?theme=dark"></script>
+              <div class="thm-badge" id="thmBadge">
+                <iframe src="https://tryhackme.com/badge/t/3780a1d006eae576519993e42b1760d9ffad73dfcd710f0311c712e45ea8e0698c32fbb96626401cfaea88932ece8006/embed?theme=dark" width="400" height="172" title="TryHackMe profile badge" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
               </div>
+              <a class="row-cta row-link" href="https://tryhackme.com/p/MarcoMelucci" target="_blank" rel="noopener">Profile <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
             </div>
           </li>
         </ul>
@@ -755,10 +924,16 @@
           <span class="chap-num" aria-hidden="true">05/05</span>
         </header>
         <p class="contact-lead" id="contactLead" data-hl="ribbon">Feel free to reach out for questions and collaborations, or to request my <mark class="hl" style="--c: var(--s1); --i: 0">CV</mark>.</p>
-        <a class="email-big" href="mailto:marcomelucci23@gmail.com" data-fit><span class="fit">marcomelucci23@gmail.com</span></a>
+        <a class="email-link" href="mailto:marcomelucci23@gmail.com">
+          <span class="email-pre"><svg class="ico ico-stroke" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.75" y="3.25" width="12.5" height="9.5" rx="1.8"/><path d="m2.5 4.6 5.5 4.15 5.5-4.15"/></svg>mailto:</span>
+          <span class="email-main">
+            <span class="email-text">marcomelucci23@gmail.com</span>
+            <span class="email-go" aria-hidden="true"><svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </span>
+        </a>
         <div class="ribbon-anchor" id="anchorContact" aria-hidden="true"></div>
         <div class="contact-actions">
-          <button class="btn btn-ink" id="copyBtn" type="button"><span class="ico-swap" aria-hidden="true"><svg class="ico ico-stroke ico-copy" viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8.5" height="8.5" rx="1.6"/><path d="M10.5 3.2A1.6 1.6 0 0 0 8.9 2H3.6A1.6 1.6 0 0 0 2 3.6v5.3a1.6 1.6 0 0 0 1.2 1.55"/></svg><svg class="ico ico-stroke ico-check" viewBox="0 0 16 16"><path d="M2.75 8.5 6.25 12l7-7.5"/></svg></span><span class="btn-label">Copy address</span></button>
+          <button class="btn btn-ink" id="copyBtn" type="button"><span class="ico-swap" aria-hidden="true"><svg class="ico ico-stroke ico-copy" viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8.5" height="8.5" rx="1.6"/><path d="M10.5 3.2A1.6 1.6 0 0 0 8.9 2H3.6A1.6 1.6 0 0 0 2 3.6v5.3a1.6 1.6 0 0 0 1.2 1.55"/></svg><svg class="ico ico-stroke ico-check" viewBox="0 0 16 16"><path d="M2.75 8.5 6.25 12l7-7.5"/></svg></span><span class="btn-label">Copy email address</span></button>
           <a class="btn" href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
           <a class="btn" href="https://github.com/MarcoMelucci99" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
           <a class="btn" href="https://www.instagram.com/marcomelucci_" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>Instagram <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
@@ -771,7 +946,7 @@
   <footer class="footer" id="footer">
     <div class="wrap footer-inner">
       <p>© <span id="year">2026</span> Marco Melucci</p>
-      <a href="#top">Back to top</a>
+      <a class="to-top" href="#top">Back to top <svg class="arrow arrow-up" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10.5v-9M2.5 5 6 1.5 9.5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
   </footer>
 
@@ -804,6 +979,101 @@
         });
       }
 
+      /* ---- The M: find its first diagonal with a canvas so the stripes sit exactly on it ---- */
+      const mMark = document.querySelector('.m-mark');
+      function measureM() {
+        if (!mMark) return;
+        try {
+          const cs = getComputedStyle(mMark);
+          const F = parseFloat(cs.fontSize);
+          const W = Math.ceil(F * 2), H = Math.ceil(F * 2);
+          const cv = document.createElement('canvas');
+          cv.width = W; cv.height = H;
+          const ctx = cv.getContext('2d', { willReadFrequently: true });
+          ctx.font = cs.fontWeight + ' ' + F + 'px ' + cs.fontFamily;
+          ctx.textBaseline = 'alphabetic';
+          const x0 = Math.round(F * 0.4), y0 = Math.round(F * 1.4);
+          ctx.fillText('M', x0, y0);
+          const m = ctx.measureText('M');
+          const px = ctx.getImageData(0, 0, W, H).data;
+          const on = (x, y) => px[(y * W + x) * 4 + 3] > 127;
+          const top = Math.max(0, Math.floor(y0 - m.actualBoundingBoxAscent));
+          const bot = Math.min(H - 1, Math.ceil(y0 + m.actualBoundingBoxDescent));
+          // rows where the M splits into four strokes: stem, \, /, stem
+          const rows = [];
+          for (let y = top; y <= bot; y++) {
+            const runs = [];
+            let start = -1;
+            for (let x = 0; x < W; x++) {
+              const o = on(x, y);
+              if (o && start < 0) start = x;
+              if (!o && start >= 0) { runs.push([start, x]); start = -1; }
+            }
+            if (start >= 0) runs.push([start, W]);
+            if (runs.length === 4) rows.push({ y: y + 0.5, c: (runs[1][0] + runs[1][1]) / 2, w: runs[1][1] - runs[1][0] });
+          }
+          if (rows.length < 6) return;
+          const use = rows.slice(Math.floor(rows.length * 0.1), Math.ceil(rows.length * 0.9));
+          let sy = 0, sx = 0, syy = 0, sxy = 0;
+          use.forEach(r => { sy += r.y; sx += r.c; syy += r.y * r.y; sxy += r.y * r.c; });
+          const n = use.length;
+          const a = (n * sxy - sy * sx) / (n * syy - sy * sy);
+          const b = (sx - a * sy) / n;
+          const wH = use.reduce((t, r) => t + r.w, 0) / n;
+          const norm = Math.sqrt(1 + a * a);
+          const T = wH / norm;
+          // run the stripes along the whole diagonal: from the top of the M down to the bottom of its middle vertex
+          let yV = rows[rows.length - 1].y;
+          for (let y = Math.floor(yV) + 1; y <= bot; y++) {
+            let count = 0, prev = false;
+            for (let x = 0; x < W; x++) { const o = on(x, y); if (o && !prev) count++; prev = o; }
+            if (count >= 3) yV = y + 1; else break;
+          }
+          const yS = top, yE = yV;
+          if (!isFinite(a) || !isFinite(T) || T <= 0) return;
+          // map canvas coordinates into the span's box
+          const L = parseFloat(cs.lineHeight) || F * 0.86;
+          const A = m.fontBoundingBoxAscent, D = m.fontBoundingBoxDescent;
+          if (!A && A !== 0) return;
+          const baseline = (L - (A + D)) / 2 + A;
+          const BW = mMark.offsetWidth, BH = mMark.offsetHeight;
+          const C = [BW / 2, BH / 2];
+          const pt = y => [a * y + b - x0, baseline + (y - y0)];
+          // across the stroke (bands)
+          const phi1 = Math.atan2(1, a);
+          const n1 = [Math.sin(phi1), -Math.cos(phi1)];
+          const L1 = Math.abs(BW * Math.sin(phi1)) + Math.abs(BH * Math.cos(phi1));
+          const along = (p, dir, len) => (p[0] - C[0]) * dir[0] + (p[1] - C[1]) * dir[1] + len / 2;
+          const yMid = (rows[0].y + rows[rows.length - 1].y) / 2;
+          const s0 = along(pt(yMid), n1, L1);
+          // along the stroke (start and end of the coloured run)
+          const phi2 = Math.atan2(a, -1);
+          const n2 = [Math.sin(phi2), -Math.cos(phi2)];
+          const L2 = Math.abs(BW * Math.sin(phi2)) + Math.abs(BH * Math.cos(phi2));
+          const t0 = along(pt(yS), n2, L2), t1 = along(pt(yE), n2, L2);
+          const set = (k, v) => mMark.style.setProperty(k, v);
+          const pxv = v => v.toFixed(2) + 'px';
+          set('--m-a1', (phi1 * 180 / Math.PI).toFixed(3) + 'deg');
+          set('--m-a2', (phi2 * 180 / Math.PI).toFixed(3) + 'deg');
+          set('--m-b0', pxv(s0 - T / 2 - 1.5));
+          set('--m-b1', pxv(s0 - T / 4));
+          set('--m-b2', pxv(s0));
+          set('--m-b3', pxv(s0 + T / 4));
+          set('--m-b4', pxv(s0 + T / 2 + 1.5));
+          set('--m-t0', pxv(Math.min(t0, t1)));
+          set('--m-len', pxv(Math.abs(t1 - t0)));
+          mMark.classList.add('m-ready');
+        } catch (err) { /* leave the plain letter */ }
+      }
+
+      /* ---- TryHackMe badge: fixed 400x172 iframe, scaled to fit narrow screens ---- */
+      const thmBadge = document.getElementById('thmBadge');
+      function fitBadge() {
+        if (!thmBadge) return;
+        const k = Math.min(1, thmBadge.clientWidth / 400);
+        thmBadge.style.setProperty('--k', k.toFixed(4));
+      }
+
       /* ---- Ribbon geometry ----
          Four parallel stripes: across the hero, around a corner, down the right
          gutter, around a second corner and under the email. */
@@ -823,6 +1093,8 @@
         const w = narrow ? 3 : 8;
         const m = narrow ? 4 : 36;
         const R = narrow ? 28 : 64;
+        const gap = narrow ? 6 : 16;     // space from the left edge where the ribbon starts
+        const step = narrow ? 5 : 12;    // staircase offset between stripes
         const hr = anchorHero.getBoundingClientRect();
         const cr = anchorContact.getBoundingClientRect();
         const yH = hr.top + sy + hr.height / 2;
@@ -839,17 +1111,17 @@
           const cy = yH + R;
           const cy2 = yC - R;
           p.setAttribute('d',
-            'M0 ' + (yH + d) +
+            'M' + (gap + i * step) + ' ' + (yH + d) +
             ' H' + cx +
             ' A' + r + ' ' + r + ' 0 0 1 ' + (xV - d) + ' ' + cy +
             ' V' + cy2 +
             ' A' + r + ' ' + r + ' 0 0 1 ' + cx + ' ' + (yC - d) +
-            ' H' + xEnd);
+            ' H' + (xEnd + (3 - i) * step));
           p.style.strokeWidth = (w + 0.6) + 'px';
-          const seg1 = cx;
+          const seg1 = Math.max(0, cx - (gap + i * step));
           const arc = Math.PI * r / 2;
           const vert = Math.max(0, cy2 - cy);
-          const seg3 = Math.max(0, cx - xEnd);
+          const seg3 = Math.max(0, cx - (xEnd + (3 - i) * step));
           const total = seg1 + arc + vert + arc + seg3;
           p.style.strokeDasharray = total + ' ' + total;
           return { seg1, arc, vert, seg3, total, cy, cy2 };
@@ -966,7 +1238,7 @@
       const relayout = () => {
         if (relayoutQueued) return;
         relayoutQueued = true;
-        requestAnimationFrame(() => { relayoutQueued = false; fitAll(); layoutRibbon(); spy(); });
+        requestAnimationFrame(() => { relayoutQueued = false; fitAll(); fitBadge(); measureM(); layoutRibbon(); spy(); });
       };
       window.addEventListener('resize', relayout);
       if ('ResizeObserver' in window) new ResizeObserver(relayout).observe(document.getElementById('main'));
@@ -1012,7 +1284,7 @@
       const ready = document.fonts && document.fonts.ready
         ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 700))])
         : Promise.resolve();
-      ready.then(() => { fitAll(); layoutRibbon(); runLoader(); });
+      ready.then(() => { fitAll(); fitBadge(); measureM(); layoutRibbon(); runLoader(); });
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
       window.addEventListener('load', relayout);
 
@@ -1071,7 +1343,7 @@
           copyBtn.classList.add('is-copied');
           copyStatus.textContent = 'Email address copied to clipboard.';
           clearTimeout(resetTimer);
-          resetTimer = setTimeout(() => { swap('Copy address'); copyBtn.classList.remove('is-copied'); copyStatus.textContent = ''; }, 1800);
+          resetTimer = setTimeout(() => { swap('Copy email address'); copyBtn.classList.remove('is-copied'); copyStatus.textContent = ''; }, 1800);
         } catch (err) {
           window.location.href = 'mailto:' + address;
         }
