@@ -1,0 +1,43 @@
+# Marco Melucci
+
+> Cybersecurity | Data Enthusiast
+
+## About
+
+Marco Melucci is an Italian cybersecurity professional and Security Transformation Analyst at Accenture.
+
+His professional interests include OT/ICS Security, Automotive Cybersecurity, Cloud Security, Ethical Hacking and Cybersecurity Transformation.
+
+## Expertise
+
+- OT/ICS Cybersecurity
+- Automotive Security
+- Cloud Security
+- Ethical Hacking
+- Security Operations
+- SIEM and Splunk
+- Data Analysis and Visualization
+- IoT Security
+
+## Technologies
+
+- Splunk
+- Python
+- Linux
+- Kali Linux
+- Wireshark
+- Burp Suite
+- Metasploit
+- Nmap
+- Docker
+- Google Cloud
+
+## Links
+
+- Website: https://marcomelucci.me/
+- GitHub: https://github.com/MarcoMelucci99
+- LinkedIn: https://www.linkedin.com/in/marco-melucci-friendlyhacker/
+
+## Contact
+
+Visit the official website for professional inquiries and collaboration opportunities.
