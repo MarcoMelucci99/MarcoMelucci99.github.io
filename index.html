@@ -6,8 +6,8 @@
   <title>Marco Melucci | Cybersecurity</title>
   <meta name="description" content="Marco Melucci, Security Transformation Analyst at Accenture Cybersecurity, focused on OT/ICS and automotive security.">
     <link rel="canonical" href="https://marcomelucci.me/">
-  <meta name="theme-color" content="#EDEEEA" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111216" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F2F2F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://marcomelucci.me/">
   <meta property="og:title" content="Marco Melucci | Cybersecurity">
@@ -68,7 +68,7 @@
 }
 </script>
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Cpolygon points='11,14 13.5,14 29.75,46 27.5,46' fill='%232E4A73'/%3E%3Cpolygon points='13.5,14 16,14 32,46 29.75,46' fill='%235B83B7'/%3E%3Cpolygon points='16,14 18.5,14 34.25,46 32,46' fill='%239DB4CE'/%3E%3Cpolygon points='18.5,14 21,14 36.5,46 34.25,46' fill='%23D3D8DE'/%3E%3Cpolygon points='53,14 43,14 27.5,46 36.5,46' fill='%23EDEEEA'/%3E%3Crect x='11' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3Crect x='44' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151517'/%3E%3Cpolygon points='11,14 13.5,14 29.75,46 27.5,46' fill='%23FF5A1F'/%3E%3Cpolygon points='13.5,14 16,14 32,46 29.75,46' fill='%237C8591'/%3E%3Cpolygon points='16,14 18.5,14 34.25,46 32,46' fill='%23A3A8AF'/%3E%3Cpolygon points='18.5,14 21,14 36.5,46 34.25,46' fill='%23D7D9DC'/%3E%3Cpolygon points='53,14 43,14 27.5,46 36.5,46' fill='%23EDEDEB'/%3E%3Crect x='11' y='14' width='9' height='36' fill='%23EDEDEB'/%3E%3Crect x='44' y='14' width='9' height='36' fill='%23EDEDEB'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -79,25 +79,27 @@
        ------------------------------------------------------------ */
     :root {
       color-scheme: light dark;
-      --paper: #EDEEEA;
-      --paper-2: #E3E4DF;
-      --ink: #15161A;
-      --ink-2: #5E6066;
-      --rule: #C8C9C3;
-      --s1: #4FC3E8;  /* sky */
-      --s2: #45BE72;  /* green */
-      --s3: #F5C518;  /* yellow */
-      --s4: #E8432F;  /* red */
-      --orange: #F28C28;
-      --blue: #4C7DFF;
-      --purple: #9B6BFF;
-      --plum: #442B48;
-      --beige: #DCC39A;
-      --bordeaux: #9B2335;
-      --r1: #D3D8DE;  /* silver */
-      --r2: #9DB4CE;  /* mist blue */
-      --r3: #5B83B7;  /* denim */
-      --r4: #2E4A73;  /* navy */
+      --paper: #F2F2F0;
+      --paper-2: #E6E6E3;
+      --ink: #151517;
+      --ink-2: #606268;
+      --rule: #CACAC6;
+      /* Signal: warm greys, one signal orange */
+      --signal: #FF5A1F;
+      --graphite: #2B2F36;
+      --s1: #A3A8AF;  /* mid grey */
+      --s2: #7C8591;  /* steel */
+      --s3: #FF5A1F;  /* signal */
+      --s4: #FF5A1F;  /* signal */
+      --orange: #FF5A1F;
+      --blue: #7C8591;
+      --purple: #7C8591;
+      --plum: #2B2F36;  /* name box: graphite */
+      --hl-mix: 48%;
+      --r1: #D7D9DC;  /* light grey */
+      --r2: #A3A8AF;  /* mid grey */
+      --r3: #7C8591;  /* steel */
+      --r4: #FF5A1F;  /* signal */
       --on-s: #15161A;
       --on-s4: #15161A;
       --display: "Urbanist", "Century Gothic", "Avenir Next", "Futura", system-ui, sans-serif;
@@ -110,12 +112,14 @@
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
-        --paper: #111216;
-        --paper-2: #1A1B20;
-        --ink: #EDEEEA;
-        --ink-2: #9B9DA4;
-        --rule: #2D2E34;
+        --paper: #111113;
+        --paper-2: #1B1B1E;
+        --ink: #EDEDEB;
+        --ink-2: #9C9CA2;
+        --rule: #2C2C30;
+        --plum: #3A3F48;
         --name-hl: 90%;
+        --hl-mix: 62%;
       }
     }
 
@@ -138,7 +142,7 @@
     button { font: inherit; color: inherit; }
     a { color: inherit; }
 
-    ::selection { background: var(--s1); color: var(--on-s); }
+    ::selection { background: var(--signal); color: var(--on-s); }
     :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
 
     .sr-only {
@@ -270,7 +274,7 @@
       padding: 6px 0; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink-2);
       transition: color 200ms ease;
     }
-    .slash { color: var(--c); font-weight: 800; }
+    .slash { color: var(--signal); font-weight: 800; }
     .nav a::after {
       content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
       background: linear-gradient(90deg, var(--r1) 0 25%, var(--r2) 25% 50%, var(--r3) 50% 75%, var(--r4) 75%);
@@ -438,7 +442,7 @@
     .hl {
       color: inherit;
       background-color: transparent;
-      background-image: linear-gradient(color-mix(in srgb, var(--c) 72%, transparent), color-mix(in srgb, var(--c) 72%, transparent));
+      background-image: linear-gradient(color-mix(in srgb, var(--signal) var(--hl-mix), transparent), color-mix(in srgb, var(--signal) var(--hl-mix), transparent));
       background-repeat: no-repeat;
       background-position: 0 90%;
       background-size: 100% 0.32em;
@@ -661,7 +665,8 @@
       font-size: 13px; font-weight: 600; line-height: 1;
     }
     .pill .ico { width: 14px; height: 14px; }
-    .pill-win { background: var(--s3); border-color: var(--s3); color: var(--on-s); }
+    .pill-win { background: var(--graphite); border-color: var(--graphite); color: #FFFFFF; }
+    .pill-win .ico { color: var(--signal); }
     .project-title { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.4rem); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
     .project-feature .project-title { font-size: clamp(2.75rem, 6vw, 5rem); }
     .project-text { display: block; max-width: 64ch; font-size: 17px; line-height: 1.55; color: var(--ink-2); transition: color 250ms ease; }
@@ -926,37 +931,37 @@
           <span class="chap-num" aria-hidden="true">02/06</span>
         </header>
         <ol class="path">
-          <li class="path-row fill-row" style="--fill: var(--purple)">
+          <li class="path-row fill-row" style="--fill: var(--signal)">
             <p class="path-when">2025 – Present</p>
             <p class="path-what">Security Transformation Analyst</p>
             <p class="path-where">Accenture Cybersecurity</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--s3)">
+          <li class="path-row fill-row" style="--fill: var(--s2)">
             <p class="path-when">2025</p>
             <p class="path-what">The Big Hack 2025, winner</p>
             <p class="path-where">Hackathon won with <a class="inline-link" href="#projects">AdFlow</a>, a generative-AI system that runs multi-platform ad campaigns.</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--blue)">
+          <li class="path-row fill-row" style="--fill: var(--s1)">
             <p class="path-when">2025</p>
             <p class="path-what">Cyber Hackademy</p>
             <p class="path-where">A cybersecurity program that gave me solid ground in networking, OT security, penetration testing and AI.</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--s2)">
+          <li class="path-row fill-row" style="--fill: var(--signal)">
             <p class="path-when">Award</p>
             <p class="path-what">Youth America Award</p>
             <p class="path-where">Recognized among the top 1,000 graduates in Italy.</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--s1)">
+          <li class="path-row fill-row" style="--fill: var(--s2)">
             <p class="path-when">2024</p>
             <p class="path-what">Master's Degree in Data Analysis</p>
             <p class="path-where">University of Naples Federico II</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--orange)">
+          <li class="path-row fill-row" style="--fill: var(--s1)">
             <p class="path-when">2024</p>
             <p class="path-what">University Tutor</p>
             <p class="path-where">Supported several student teams building digital products: guiding their research, design and development, giving targeted feedback and encouraging teamwork and problem solving.</p>
           </li>
-          <li class="path-row fill-row" style="--fill: var(--s4)">
+          <li class="path-row fill-row" style="--fill: var(--s2)">
             <p class="path-when">2022</p>
             <p class="path-what">Bachelor's Degree in Linguistic Mediation</p>
             <p class="path-where">University of Naples “L’Orientale”</p>
@@ -973,7 +978,7 @@
           <span class="chap-num" aria-hidden="true">03/06</span>
         </header>
         <div class="projects">
-          <a class="project project-feature" href="https://github.com/MarcoMelucci99/AdFlow_Hackathons" target="_blank" rel="noopener" style="--fill: var(--beige)">
+          <a class="project project-feature" href="https://github.com/MarcoMelucci99/AdFlow_Hackathons" target="_blank" rel="noopener" style="--fill: var(--graphite); --on: #FFFFFF">
             <span class="project-top">
               <span class="pill pill-win"><svg class="ico ico-stroke" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2.25h6V6a3 3 0 0 1-6 0Z"/><path d="M5 3.5H3.25A1.9 1.9 0 0 0 5 6.4M11 3.5h1.75A1.9 1.9 0 0 1 11 6.4M8 9v2.25M5.75 13.75h4.5M6.5 11.25h3v2.5h-3Z"/></svg>Winner, The Big Hack 2025</span>
               <span class="project-cta">Repository <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
@@ -983,7 +988,7 @@
             <span class="project-tags"><span>Generative AI</span><span>AI agents</span><span>Google Ads</span><span>Meta Ads</span><span>TikTok Ads</span></span>
           </a>
           <div class="project-grid">
-            <article class="project" style="--fill: var(--bordeaux); --on: #FFFFFF">
+            <article class="project" style="--fill: var(--signal)">
               <span class="project-top">
                 <span class="pill">Cyber Hackademy project work</span>
                 <span class="project-note">Private project</span>
@@ -992,7 +997,7 @@
               <p class="project-text">We rebuilt electromedical devices with ESP32 boards running open-source Tasmota firmware and set up their whole network. Then we planted vulnerabilities documented by MITRE, exploited them over MQTT and defended the environment with the firewall we were given.</p>
               <span class="project-tags"><span>ESP32</span><span>Tasmota</span><span>MQTT</span><span>MITRE</span><span>Firewall</span></span>
             </article>
-            <a class="project" href="https://github.com/MarcoMelucci99/bunkerweb-multisite-applications" target="_blank" rel="noopener" style="--fill: var(--blue)">
+            <a class="project" href="https://github.com/MarcoMelucci99/bunkerweb-multisite-applications" target="_blank" rel="noopener" style="--fill: var(--s2)">
               <span class="project-top">
                 <span class="pill">Lab</span>
                 <span class="project-cta">Repository <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
@@ -1002,7 +1007,7 @@
               <span class="project-tags"><span>Docker Compose</span><span>BunkerWeb</span><span>Open WebUI</span><span>Ollama</span><span>WordPress</span></span>
             </a>
           </div>
-          <article class="project publication" style="--fill: var(--s2)">
+          <article class="project publication" style="--fill: var(--s1)">
             <span class="project-top">
               <span class="pill">Publication</span>
               <span class="project-note">McGraw Hill</span>
@@ -1023,7 +1028,7 @@
         </header>
         <ul class="rows">
           <li>
-            <a class="row" href="https://www.credly.com/users/marcomelucci-friendlyhacker" target="_blank" rel="noopener" style="--fill: var(--orange)">
+            <a class="row" href="https://www.credly.com/users/marcomelucci-friendlyhacker" target="_blank" rel="noopener" style="--fill: var(--signal)">
               <span class="row-dot" aria-hidden="true"></span>
               <span class="row-title">Credly</span>
               <span class="row-meta">Verified certifications</span>
@@ -1031,7 +1036,7 @@
             </a>
           </li>
           <li>
-            <a class="row" href="https://profile.hackthebox.com/profile/019f60bc-e02c-721a-99b9-f91d56152ecd" target="_blank" rel="noopener" style="--fill: var(--s2)">
+            <a class="row" href="https://profile.hackthebox.com/profile/019f60bc-e02c-721a-99b9-f91d56152ecd" target="_blank" rel="noopener" style="--fill: var(--s1)">
               <span class="row-dot" aria-hidden="true"></span>
               <span class="row-title">Hack The Box</span>
               <span class="row-meta">Ethical hacking courses and practice</span>
@@ -1062,7 +1067,7 @@
         </header>
         <div class="focus-list" style="--fill: var(--s2)">
           <article class="focus-item fill-row">
-            <span class="swatch" style="--c: var(--s3)" aria-hidden="true"></span>
+            <span class="swatch" style="--c: var(--s2)" aria-hidden="true"></span>
             <h3 class="focus-title">OT/ICS security</h3>
             <p class="focus-text">Protecting industrial control systems and the operational networks behind manufacturing, energy and critical infrastructure.</p>
           </article>
