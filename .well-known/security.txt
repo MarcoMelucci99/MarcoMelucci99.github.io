@@ -1,0 +1,9 @@
+# Security contact for marcomelucci.me
+Contact: mailto:marcomelucci23@gmail.com
+Expires: 2027-10-31T23:59:00.000Z
+Preferred-Languages: en, it
+Canonical: https://marcomelucci.me/.well-known/security.txt
+
+# I see what you're doing here... you found the first piece!
+# The crawlers were given an order: don't look in a certain place.
+# Go and read what they were told to stay away from.
