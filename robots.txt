@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /friendlyhacker/
 
 Sitemap: https://marcomelucci.me/sitemap.xml
