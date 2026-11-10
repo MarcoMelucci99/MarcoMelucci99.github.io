@@ -29,10 +29,16 @@
     "url": "https://www.accenture.com/"
   },
   "description": "Cybersecurity professional focused on OT/ICS Security, Automotive Cybersecurity, Cloud Security and Cybersecurity Transformation. Background in Data Analysis.",
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of Naples Federico II"
-  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Naples Federico II"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Naples L'Orientale"
+    }
+  ],
   "knowsLanguage": [
     "Italian",
     "English"
@@ -62,7 +68,7 @@
 }
 </script>
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Cpolygon points='11,14 13.5,14 29.75,46 27.5,46' fill='%23E8432F'/%3E%3Cpolygon points='13.5,14 16,14 32,46 29.75,46' fill='%23F5C518'/%3E%3Cpolygon points='16,14 18.5,14 34.25,46 32,46' fill='%2345BE72'/%3E%3Cpolygon points='18.5,14 21,14 36.5,46 34.25,46' fill='%234FC3E8'/%3E%3Cpolygon points='53,14 43,14 27.5,46 36.5,46' fill='%23EDEEEA'/%3E%3Crect x='11' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3Crect x='44' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Cpolygon points='11,14 13.5,14 29.75,46 27.5,46' fill='%232E4A73'/%3E%3Cpolygon points='13.5,14 16,14 32,46 29.75,46' fill='%235B83B7'/%3E%3Cpolygon points='16,14 18.5,14 34.25,46 32,46' fill='%239DB4CE'/%3E%3Cpolygon points='18.5,14 21,14 36.5,46 34.25,46' fill='%23D3D8DE'/%3E%3Cpolygon points='53,14 43,14 27.5,46 36.5,46' fill='%23EDEEEA'/%3E%3Crect x='11' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3Crect x='44' y='14' width='9' height='36' fill='%23EDEEEA'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -86,10 +92,12 @@
       --blue: #4C7DFF;
       --purple: #9B6BFF;
       --plum: #442B48;
-      --r1: #4FC3E8;  /* sky */
-      --r2: #45BE72;  /* green */
-      --r3: #F5C518;  /* yellow */
-      --r4: #E8432F;  /* red */
+      --beige: #DCC39A;
+      --bordeaux: #9B2335;
+      --r1: #D3D8DE;  /* silver */
+      --r2: #9DB4CE;  /* mist blue */
+      --r3: #5B83B7;  /* denim */
+      --r4: #2E4A73;  /* navy */
       --on-s: #15161A;
       --on-s4: #15161A;
       --display: "Urbanist", "Century Gothic", "Avenir Next", "Futura", system-ui, sans-serif;
@@ -356,12 +364,12 @@
     }
     .wordmark {
       font-family: var(--display); font-weight: 800;
-      font-size: clamp(3.6rem, 11.5vw, 11rem); line-height: 0.86; letter-spacing: -0.035em;
+      font-size: clamp(3.3rem, 10.3vw, 9.75rem); line-height: 0.86; letter-spacing: -0.035em;
       text-transform: uppercase;
     }
     .hero-photo {
       position: relative;
-      width: clamp(200px, 22vw, 300px); aspect-ratio: 4 / 5;
+      width: clamp(180px, 19.5vw, 265px); aspect-ratio: 4 / 5;
       overflow: hidden; border-radius: 22px;
       background: var(--paper-2);
     }
@@ -379,7 +387,7 @@
     .js.is-ready .hero-photo img { transform: none; transition: transform 1500ms var(--ease-out) 120ms; }
     @media (max-width: 759px) {
       .hero-main { grid-template-columns: 1fr; gap: 24px; }
-      .hero-photo { order: -1; width: min(52vw, 210px); border-radius: 18px; }
+      .hero-photo { order: -1; width: min(47vw, 190px); border-radius: 18px; }
     }
     .wordmark .line { display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
     .wordmark .line > span { display: block; }
@@ -389,7 +397,7 @@
 
     .hero-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; }
     .hero-lede {
-      max-width: 26ch;
+      max-width: 36ch;
       font-family: var(--display); font-weight: 600;
       font-size: clamp(1.25rem, 2.2vw, 1.75rem); line-height: 1.2; letter-spacing: -0.015em;
     }
@@ -629,9 +637,71 @@
       .row-thm { grid-template-columns: 12px minmax(0, 1fr) auto; row-gap: 14px; }
     }
 
+    /* Projects */
+    .projects { display: grid; gap: 16px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .project {
+      position: relative; isolation: isolate; overflow: hidden;
+      display: flex; flex-direction: column; gap: 14px;
+      padding: clamp(20px, 2.6vw, 32px);
+      border: 1.5px solid var(--ink); border-radius: 20px;
+      color: var(--ink); text-decoration: none;
+      transition: color 250ms ease, border-color 250ms ease;
+    }
+    .project::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: var(--fill);
+      transform: translateY(101%);
+      transition: transform 500ms var(--ease-out);
+    }
+    .project-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 12px; border: 1.5px solid currentColor; border-radius: 999px;
+      font-size: 13px; font-weight: 600; line-height: 1;
+    }
+    .pill .ico { width: 14px; height: 14px; }
+    .pill-win { background: var(--s3); border-color: var(--s3); color: var(--on-s); }
+    .project-title { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.4rem); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
+    .project-feature .project-title { font-size: clamp(2.75rem, 6vw, 5rem); }
+    .project-text { display: block; max-width: 64ch; font-size: 17px; line-height: 1.55; color: var(--ink-2); transition: color 250ms ease; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+    .project-tags span {
+      padding: 6px 11px; border-radius: 999px;
+      font-size: 13px; font-weight: 600; line-height: 1;
+      box-shadow: inset 0 0 0 1px var(--rule);
+      transition: box-shadow 250ms ease;
+    }
+    .project-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+    .project-note { font-size: 13px; font-weight: 600; color: var(--ink-2); transition: color 250ms ease; }
+    .pub-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.25rem, 2vw, 1.7rem); line-height: 1.2; letter-spacing: -0.015em; max-width: 46ch; text-wrap: balance; }
+    .pub-authors { font-size: 16px; color: var(--ink-2); transition: color 250ms ease; }
+    .pub-authors .box-hl { color: var(--ink); font-weight: 600; }
+    .pub-authors .box-hl::before { left: -3px; }
+    a.project:focus-visible::before { transform: none; }
+    a.project:focus-visible, a.project:focus-visible .project-text { color: var(--on, var(--on-s)); }
+    @media (hover: hover) and (pointer: fine) {
+      .project:hover::before { transform: none; }
+      .project:hover { color: var(--on, var(--on-s)); border-color: var(--fill); }
+      .project:hover .project-text, .project:hover .project-note, .project:hover .pub-authors { color: var(--on, var(--on-s)); }
+      .project:hover .project-tags span { box-shadow: inset 0 0 0 1px var(--on, var(--on-s)); }
+      a.project:hover .arrow { transform: translate(2px, -2px); }
+    }
+    @media (max-width: 760px) { .project-grid { grid-template-columns: 1fr; } }
+
+    /* The soft plum box used under my name, reused on small labels */
+    .box-hl { position: relative; isolation: isolate; color: var(--ink); }
+    .box-hl::before {
+      content: ""; position: absolute; z-index: -1;
+      left: -6px; width: calc(90% + 6px); top: -0.14em; bottom: -0.14em;
+      border-radius: 4px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--plum) var(--name-hl, 45%), transparent), transparent);
+    }
+    .inline-link { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.18em; }
+
     .toolkit { margin-top: clamp(64px, 8vw, 112px); }
     .toolkit-head { padding-bottom: 16px; border-bottom: 1.5px solid var(--ink); font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.25rem); letter-spacing: -0.02em; }
-    .kit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
+    .kit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
     .kit ul { margin-top: 12px; }
     .kit li {
       position: relative;
@@ -649,7 +719,8 @@
       .kit li:hover { padding-left: 18px; }
       .kit li:hover::before { transform: scale(1); }
     }
-    @media (max-width: 760px) { .kit-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1000px) { .kit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .kit-grid { grid-template-columns: 1fr; } }
 
     /* Contact */
     .contact-lead {
@@ -711,7 +782,7 @@
       .js.is-ready .hero-fade { transition: opacity 400ms ease; }
       .roll-col, .row::before, .nav a::after, .js [data-hl].in .hl { transition: none; }
       .js .brand-hl::before { transform: none; }
-      .fill-row::before, .lang::before, .kit li, .kit li::before { transition: none; }
+      .fill-row::before, .lang::before, .kit li, .kit li::before, .project::before { transition: none; }
       .js .m-mark.m-ready, .js.is-ready .m-mark.m-ready { --m-grow: 1; transition: none; }
       .menu, .menu.open { transition: none; }
       .menu li { transform: none; }
@@ -755,10 +826,11 @@
       <nav class="nav" aria-label="Chapters">
         <ol>
           <li><a href="#about"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</a></li>
-          <li><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</a></li>
-          <li><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</a></li>
+          <li><a href="#path"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>career path</a></li>
+          <li><a href="#projects"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>projects</a></li>
           <li><a href="#certifications"><span class="slash" style="--c: var(--s4)" aria-hidden="true">/</span>certs – hacking</a></li>
-          <li><a href="#contact"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>contact</a></li>
+          <li><a href="#focus"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>specializations</a></li>
+          <li><a href="#contact"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>contact</a></li>
         </ol>
       </nav>
       <ul class="socials">
@@ -773,10 +845,11 @@
   <div class="menu" id="menu" inert>
     <ol>
       <li style="--i: 0"><a href="#about"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</a></li>
-      <li style="--i: 1"><a href="#focus"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</a></li>
-      <li style="--i: 2"><a href="#path"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</a></li>
+      <li style="--i: 1"><a href="#path"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>career path</a></li>
+      <li style="--i: 2"><a href="#projects"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>projects</a></li>
       <li style="--i: 3"><a href="#certifications"><span class="slash" style="--c: var(--s4)" aria-hidden="true">/</span>certifications – ethical hacking</a></li>
-      <li style="--i: 4"><a href="#contact"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>contact</a></li>
+      <li style="--i: 4"><a href="#focus"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>specializations</a></li>
+      <li style="--i: 5"><a href="#contact"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>contact</a></li>
     </ol>
     <div class="menu-socials">
       <a href="https://www.linkedin.com/in/marco-melucci-friendlyhacker" target="_blank" rel="noopener">LinkedIn</a>
@@ -786,7 +859,7 @@
   </div>
 
   <div class="chapter" aria-hidden="true">
-    <span class="odo"><span>0</span><span class="roll"><span class="roll-col" id="rollCol"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></span></span><span class="odo-total">/05</span></span>
+    <span class="odo"><span>0</span><span class="roll"><span class="roll-col" id="rollCol"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></span></span><span class="odo-total">/06</span></span>
     <span class="chapter-name" id="chapterName">/home</span>
   </div>
 
@@ -807,7 +880,7 @@
         <p><span class="k">Based in</span><br>Italy, <time id="clock">--:--</time> local time</p>
       </div>
       <div class="wrap hero-bottom">
-        <p class="hero-lede hero-fade" style="--d: 300ms" data-hl>Cybersecurity for the systems that run the <mark class="hl" style="--c: var(--s2); --i: 4">physical world</mark>.</p>
+        <p class="hero-lede hero-fade" style="--d: 300ms" data-hl>Cybersecurity for the systems that run the <mark class="hl" style="--c: var(--s2); --i: 4">physical world</mark> (and a lot more).</p>
         <div class="hero-actions hero-fade" style="--d: 400ms">
           <a class="btn btn-ink" href="#contact">Get in touch <svg class="arrow arrow-down" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M2.5 7 6 10.5 9.5 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
           <a class="btn" href="https://www.credly.com/users/marcomelucci-friendlyhacker" target="_blank" rel="noopener">Certifications <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
@@ -820,7 +893,7 @@
       <div class="wrap">
         <header class="chap-head">
           <h2 class="chap-title" id="about-title"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>about</h2>
-          <span class="chap-num" aria-hidden="true">01/05</span>
+          <span class="chap-num" aria-hidden="true">01/06</span>
         </header>
         <p class="statement" data-hl><mark class="hl" style="--c: var(--s1); --i: 0">Hello World</mark>, I'm Marco. I work in cybersecurity, mostly on the tech you never see but rely on every day: <mark class="hl" style="--c: var(--s3); --i: 1">industrial control systems</mark> and <mark class="hl" style="--c: var(--s4); --i: 2">connected vehicles</mark>.</p>
         <div class="about-body" data-hl>
@@ -845,51 +918,23 @@
       </div>
     </section>
 
-    <!-- 02 Specializations -->
-    <section class="chapter-sec" id="focus" data-chapter="2" data-name="/specializations" aria-labelledby="focus-title">
+    <!-- 02 Career path -->
+    <section class="chapter-sec" id="path" data-chapter="2" data-name="/career path" aria-labelledby="path-title">
       <div class="wrap">
         <header class="chap-head">
-          <h2 class="chap-title" id="focus-title"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>specializations</h2>
-          <span class="chap-num" aria-hidden="true">02/05</span>
-        </header>
-        <div class="focus-list" style="--fill: var(--s2)">
-          <article class="focus-item fill-row">
-            <span class="swatch" style="--c: var(--s3)" aria-hidden="true"></span>
-            <h3 class="focus-title">OT/ICS security</h3>
-            <p class="focus-text">Protecting industrial control systems and the operational networks behind manufacturing, energy and critical infrastructure.</p>
-          </article>
-          <article class="focus-item fill-row">
-            <span class="swatch" style="--c: var(--s4)" aria-hidden="true"></span>
-            <h3 class="focus-title">Automotive security</h3>
-            <p class="focus-text">Securing connected vehicles, from in-vehicle networks to the software and services around them.</p>
-          </article>
-        </div>
-        <div class="also">
-          <p class="label">Also deepening</p>
-          <ul>
-            <li class="tag" style="--c: var(--s1)">Cloud</li>
-            <li class="tag" style="--c: var(--s2)">IoT</li>
-            <li class="tag" style="--c: var(--s3)">AI</li>
-            <li class="tag" style="--c: var(--s4)">Networking</li>
-            <li class="tag" style="--c: var(--s1)">Offensive security</li>
-            <li class="tag" style="--c: var(--s2)">Use case engineering</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 Career path -->
-    <section class="chapter-sec" id="path" data-chapter="3" data-name="/career path" aria-labelledby="path-title">
-      <div class="wrap">
-        <header class="chap-head">
-          <h2 class="chap-title" id="path-title"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>career path</h2>
-          <span class="chap-num" aria-hidden="true">03/05</span>
+          <h2 class="chap-title" id="path-title"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>career path</h2>
+          <span class="chap-num" aria-hidden="true">02/06</span>
         </header>
         <ol class="path">
           <li class="path-row fill-row" style="--fill: var(--purple)">
             <p class="path-when">2025 – Present</p>
             <p class="path-what">Security Transformation Analyst</p>
             <p class="path-where">Accenture Cybersecurity</p>
+          </li>
+          <li class="path-row fill-row" style="--fill: var(--s3)">
+            <p class="path-when">2025</p>
+            <p class="path-what">The Big Hack 2025, winner</p>
+            <p class="path-where">Hackathon won with <a class="inline-link" href="#projects">AdFlow</a>, a generative-AI system that runs multi-platform ad campaigns.</p>
           </li>
           <li class="path-row fill-row" style="--fill: var(--blue)">
             <p class="path-when">2025</p>
@@ -902,11 +947,70 @@
             <p class="path-where">Recognized among the top 1,000 graduates in Italy.</p>
           </li>
           <li class="path-row fill-row" style="--fill: var(--s1)">
-            <p class="path-when">Earlier</p>
+            <p class="path-when">2024</p>
             <p class="path-what">Master's Degree in Data Analysis</p>
             <p class="path-where">University of Naples Federico II</p>
           </li>
+          <li class="path-row fill-row" style="--fill: var(--orange)">
+            <p class="path-when">2024</p>
+            <p class="path-what">University Tutor</p>
+            <p class="path-where">Supported several student teams building digital products: guiding their research, design and development, giving targeted feedback and encouraging teamwork and problem solving.</p>
+          </li>
+          <li class="path-row fill-row" style="--fill: var(--s4)">
+            <p class="path-when">2022</p>
+            <p class="path-what">Bachelor's Degree in Linguistic Mediation</p>
+            <p class="path-where">University of Naples “L’Orientale”</p>
+          </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- 03 Projects -->
+    <section class="chapter-sec" id="projects" data-chapter="3" data-name="/projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <header class="chap-head">
+          <h2 class="chap-title" id="projects-title"><span class="slash" style="--c: var(--s3)" aria-hidden="true">/</span>projects</h2>
+          <span class="chap-num" aria-hidden="true">03/06</span>
+        </header>
+        <div class="projects">
+          <a class="project project-feature" href="https://github.com/MarcoMelucci99/AdFlow_Hackathons" target="_blank" rel="noopener" style="--fill: var(--beige)">
+            <span class="project-top">
+              <span class="pill pill-win"><svg class="ico ico-stroke" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2.25h6V6a3 3 0 0 1-6 0Z"/><path d="M5 3.5H3.25A1.9 1.9 0 0 0 5 6.4M11 3.5h1.75A1.9 1.9 0 0 1 11 6.4M8 9v2.25M5.75 13.75h4.5M6.5 11.25h3v2.5h-3Z"/></svg>Winner, The Big Hack 2025</span>
+              <span class="project-cta">Repository <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            </span>
+            <h3 class="project-title">AdFlow</h3>
+            <p class="project-text">A generative-AI automation for ad campaigns across Google Ads, Meta Ads and TikTok Ads. A team of AI agents creates, optimizes and updates the ads on its own, improving results and cutting the hours spent on manual campaign management.</p>
+            <span class="project-tags"><span>Generative AI</span><span>AI agents</span><span>Google Ads</span><span>Meta Ads</span><span>TikTok Ads</span></span>
+          </a>
+          <div class="project-grid">
+            <article class="project" style="--fill: var(--bordeaux); --on: #FFFFFF">
+              <span class="project-top">
+                <span class="pill">Cyber Hackademy project work</span>
+                <span class="project-note">Private project</span>
+              </span>
+              <h3 class="project-title">Purple teaming on IoT medical devices</h3>
+              <p class="project-text">We rebuilt electromedical devices with ESP32 boards running open-source Tasmota firmware and set up their whole network. Then we planted vulnerabilities documented by MITRE, exploited them over MQTT and defended the environment with the firewall we were given.</p>
+              <span class="project-tags"><span>ESP32</span><span>Tasmota</span><span>MQTT</span><span>MITRE</span><span>Firewall</span></span>
+            </article>
+            <a class="project" href="https://github.com/MarcoMelucci99/bunkerweb-multisite-applications" target="_blank" rel="noopener" style="--fill: var(--blue)">
+              <span class="project-top">
+                <span class="pill">Lab</span>
+                <span class="project-cta">Repository <svg class="arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              </span>
+              <h3 class="project-title">BunkerWeb multisite</h3>
+              <p class="project-text">Several applications, Open WebUI with Ollama, WordPress and a static site, deployed behind the BunkerWeb security proxy with Docker Compose.</p>
+              <span class="project-tags"><span>Docker Compose</span><span>BunkerWeb</span><span>Open WebUI</span><span>Ollama</span><span>WordPress</span></span>
+            </a>
+          </div>
+          <article class="project publication" style="--fill: var(--s2)">
+            <span class="project-top">
+              <span class="pill">Publication</span>
+              <span class="project-note">McGraw Hill</span>
+            </span>
+            <h3 class="pub-title">Digital Society and Labor Market: A Mixed Methods Analysis in Five Departments of the University of Naples Federico II</h3>
+            <p class="pub-authors">Castaldi M., Cesare S., Letteriello M., <span class="box-hl">Melucci M.</span></p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -915,7 +1019,7 @@
       <div class="wrap">
         <header class="chap-head">
           <h2 class="chap-title" id="certifications-title"><span class="slash" style="--c: var(--s4)" aria-hidden="true">/</span>certifications – ethical hacking</h2>
-          <span class="chap-num" aria-hidden="true">04/05</span>
+          <span class="chap-num" aria-hidden="true">04/06</span>
         </header>
         <ul class="rows">
           <li>
@@ -946,32 +1050,69 @@
           </li>
         </ul>
 
+      </div>
+    </section>
+
+    <!-- 05 Specializations -->
+    <section class="chapter-sec" id="focus" data-chapter="5" data-name="/specializations" aria-labelledby="focus-title">
+      <div class="wrap">
+        <header class="chap-head">
+          <h2 class="chap-title" id="focus-title"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>specializations</h2>
+          <span class="chap-num" aria-hidden="true">05/06</span>
+        </header>
+        <div class="focus-list" style="--fill: var(--s2)">
+          <article class="focus-item fill-row">
+            <span class="swatch" style="--c: var(--s3)" aria-hidden="true"></span>
+            <h3 class="focus-title">OT/ICS security</h3>
+            <p class="focus-text">Protecting industrial control systems and the operational networks behind manufacturing, energy and critical infrastructure.</p>
+          </article>
+          <article class="focus-item fill-row">
+            <span class="swatch" style="--c: var(--s4)" aria-hidden="true"></span>
+            <h3 class="focus-title">Automotive security</h3>
+            <p class="focus-text">Securing connected vehicles, from in-vehicle networks to the software and services around them.</p>
+          </article>
+        </div>
+        <div class="also">
+          <p class="label">Also deepening</p>
+          <ul>
+            <li class="tag" style="--c: var(--s1)">Cloud</li>
+            <li class="tag" style="--c: var(--s2)">IoT</li>
+            <li class="tag" style="--c: var(--s3)">AI</li>
+            <li class="tag" style="--c: var(--s4)">Networking</li>
+            <li class="tag" style="--c: var(--s1)">Offensive security</li>
+            <li class="tag" style="--c: var(--s2)">Use case engineering</li>
+          </ul>
+        </div>
         <div class="toolkit">
           <h3 class="toolkit-head">Toolkit</h3>
           <div class="kit-grid">
             <div class="kit">
-              <p class="label">Security</p>
+              <p class="label"><span class="box-hl">Security</span></p>
               <ul><li>Wireshark</li><li>Metasploit</li><li>Burp Suite</li><li>Nmap</li><li>Kali Linux</li></ul>
             </div>
             <div class="kit">
-              <p class="label">Code and data</p>
+              <p class="label"><span class="box-hl">Code and data</span></p>
               <ul><li>Python</li><li>R</li><li>MySQL</li><li>Swift</li><li>Tableau</li></ul>
             </div>
             <div class="kit">
-              <p class="label">Disciplines</p>
-              <ul><li>Network security</li><li>Ethical hacking</li><li>Offensive security</li><li>Data analysis</li></ul>
+              <p class="label"><span class="box-hl">Build and automation</span></p>
+              <ul><li>Docker</li><li>n8n</li><li>Claude Code</li></ul>
+            </div>
+            <div class="kit">
+              <p class="label"><span class="box-hl">Disciplines</span></p>
+              <ul><li>Network security</li><li>IoT security</li><li>Ethical hacking</li><li>Offensive security</li><li>Data analysis</li></ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05 Contact -->
-    <section class="chapter-sec" id="contact" data-chapter="5" data-name="/contact" aria-labelledby="contact-title">
+    <!-- 06 Contact -->
+    <section class="chapter-sec" id="contact" data-chapter="6" data-name="/contact" aria-labelledby="contact-title">
       <div class="wrap">
         <header class="chap-head">
-          <h2 class="chap-title" id="contact-title"><span class="slash" style="--c: var(--s1)" aria-hidden="true">/</span>contact</h2>
-          <span class="chap-num" aria-hidden="true">05/05</span>
+          <h2 class="chap-title" id="contact-title"><span class="slash" style="--c: var(--s2)" aria-hidden="true">/</span>contact</h2>
+          <span class="chap-num" aria-hidden="true">06/06</span>
         </header>
         <p class="contact-lead" id="contactLead" data-hl="ribbon">Feel free to reach out for questions and collaborations, or to request my <mark class="hl" style="--c: var(--s1); --i: 0">CV</mark>.</p>
         <a class="email-link" href="mailto:marcomelucci23@gmail.com">
